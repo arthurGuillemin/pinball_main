@@ -1,0 +1,18 @@
+[submodule "pinball_esp32"]
+	path = pinball_esp32
+	url = https://github.com/arthurGuillemin/pinball_esp32
+[submodule "pinball_bridge"]
+	path = pinball_bridge
+	url = https://github.com/arthurGuillemin/pinball_bridge
+[submodule "pinball_backend"]
+	path = pinball_backend
+	url = https://github.com/arthurGuillemin/pinball_backend
+[submodule "pinball_playglass"]
+	path = pinball_playglass
+	url = https://github.com/arthurGuillemin/pinball_playglass
+[submodule "pinball_backglass"]
+	path = pinball_backglass
+	url = https://github.com/arthurGuillemin/pinball_backglass
+[submodule "pinball_dmd"]
+	path = pinball_dmd
+	url = https://github.com/arthurGuillemin/pinball_dmd
