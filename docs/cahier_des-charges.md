@@ -1,50 +1,49 @@
 # Cahier des charges
 
-# Projet de fin d’etude
+# Projet de fin d’étude
 
 # Flipper
 
-## Année 2025-
+## Année 2025-2026
 
 
 ## Sommaire
 
-- 1. Vision du projet..................................................................................................................
-   - Présentation du projet........................................................................................................
-- 2. Objectifs et périmètre...........................................................................................................
-      - Fonctionnalités principales attendues..........................................................................
-      - Fonctionnalités bonus envisagées...............................................................................
-   - Non-Objectifs :....................................................................................................................
-   - Personas :.........................................................................................................................
-- 3. Use Cases :..........................................................................................................................
-      - Cas 1 :..........................................................................................................................
-      - Cas 2 :..........................................................................................................................
-      - Cas 3 :..........................................................................................................................
-- 4. Architecture technique......................................................................................................
-- 5. Diagrames UML..................................................................................................................
-- 6. Stack technique..................................................................................................................
-- 7. Risques et Contraintes techniques................................................................................
-   - Contraintes techniques.....................................................................................................
-   - Risques identifiés...........................................................................................................
-   - Critères de réussite........................................................................................................
-- 8. Conventions équipe.........................................................................................................
-   - Stratégie Git.....................................................................................................................
-   - Règles de fusion...............................................................................................................
-   - Commits...........................................................................................................................
-   - Qualité du code................................................................................................................
-   - Test...................................................................................................................................
-- 9. Roadmap et questions ouvertes.....................................................................................
-   - Questions ouvertes :........................................................................................................
-   - Roadmap..........................................................................................................................
-- 10. Arborescence et contenu du projet..............................................................................
-   - Arborescence...................................................................................................................
-      - Repositories du projet................................................................................................
-      - Schéma d’arboresence..............................................................................................
-- 11. Description graphique du projet...................................................................................
-   - Spécifications d’affichage.................................................................................................
-   - Lien du figma :..................................................................................................................
-- Annexe :................................................................................................................................
-
+- 1. Vision du projet
+   - Présentation du projet
+- 2. Objectifs et périmètre
+      - Fonctionnalités principales attendues
+      - Fonctionnalités bonus envisagées
+   - Non-Objectifs
+   - Personas
+- 3. Use Cases
+      - Cas 1
+      - Cas 2
+      - Cas 3
+- 4. Architecture technique
+- 5. Diagrames UML
+- 6. Stack technique
+- 7. Risques et Contraintes techniques
+   - Contraintes techniques
+   - Risques identifiés
+   - Critères de réussite
+- 8. Conventions équipe
+   - Stratégie Git
+   - Règles de fusion
+   - Commits
+   - Qualité du code
+   - Test
+- 9. Roadmap et questions ouvertes
+   - Questions ouvertes
+   - Roadmap
+- 10. Arborescence et contenu du projet
+   - Arborescence
+      - Repositories du projet
+      - Schéma d’arboresence
+- 11. Description graphique du projet
+   - Spécifications d’affichage
+   - Lien du figma
+- Annexe
 
 ## 1. Vision du projet
 
@@ -110,44 +109,61 @@ distinctes, synchronisées en temps réel :
 
 #### Cas 1 :
 
-|Nom                   | Lancer une Partie                                                               |
+|Nom                        | Lancer une Partie                                                           |
 |---------------------------|-----------------------------------------------------------------------------|
 | Acteur                    | Joueur                                                                      |
 | Objectif                  | démarrer une Nouvelle Partie                                                |
-| Préconditions             | Machine Allumée et déployée<br>Machine libre (pas de joueur)               |
+| Préconditions             | Machine Allumée et déployée<br>Machine libre (pas de joueur)                |
 | Déclencheur               | Clique le bouton START                                                      |
-| Scénario nominatif        | Animation de Bienvenue<br>Score à Zéro<br>La balle entre en la table (rampe de tirette)<br>Nombre de vie défini |
-| Postconditions            | le jeu commence<br>la balle bouge en table                                  |
+| Scénario nominatif        | Animation de Bienvenue                                                      |
+|                           | Score à Zéro                                                                |
+|                           | La balle entre en la table (rampe de tirette)                               |
+|                           | Nombre de vie défini                                                         |
+| Postconditions            | le jeu commence                                                             |
+|                           | la balle bouge en table                                                     |
 | Extensions/Exceptions     | bouton ne marche pas<br>erreur inconnue                                     |
 | Classes impliquées        | Game, Physics Engine, Ball, Bar, ScoreManager                               |
 
 
 #### Cas 2 :
 
-| Nom                | Interaction balle / bumper                                                                  |
+| Nom                       | Interaction balle / bumper                                                  |
 |---------------------------|-----------------------------------------------------------------------------|
 | Acteur principal          | Joueur (via interaction physique)                                           |
 | Objectif                  | Gagner des points lors d’une collision                                      |
 | Préconditions             | Une partie est en cours et la balle est active                              |
-| Déclencheur               | La balle entre en collision avec un bumper                                   |
-| Scénario nominatif        | 1. La balle se déplace sous l’effet de la gravité<br>2. Le moteur physique détecte une collision<br>3. Collision entre Ball et Bumper<br>4. Le système applique une force de rebond<br>5. Une animation et un son sont déclenchés<br>6. Des points sont ajoutés au score<br>7. Le score est mis à jour à l’écran |
-| Postconditions            | Le score est augmenté et la balle continue son mouvement                   |
-| Extensions/Exceptions     | - Multiplicateur actif -> bonus de points<br>- Combo actif -> score majoré    |
+| Déclencheur               | La balle entre en collision avec un bumper                                  |
+| Scénario nominatif        | 1. La balle se déplace sous l’effet de la gravité                           |
+|                           | 2. Le moteur physique détecte une collision                                 |
+|                           | 3. Collision entre Ball et Bumper                                           |
+|                           | 4. Le système applique une force de rebond                                  |
+|                           | 5. Une animation et un son sont déclenchés                                  |
+|                           | 6. Des points sont ajoutés au score                                         |
+|                           | 7. Le score est mis à jour à l’écran                                        |
+| Postconditions            | Le score est augmenté et la balle continue son mouvement                    |
+| Extensions/Exceptions     | - Multiplicateur actif -> bonus de points                                   |
+|                           | - Combo actif -> score majoré                                               |
 | Classes impliquées        | Physics Engine, Ball, Bumper, ScoreManager, Game                            |
 
 
 #### Cas 3 :
 
-| Nom                 | High Score / Le Joueur écrit son surnom sur le hall of Fame                                                                  |
+| Nom                       | High Score / Le Joueur écrit son surnom sur le hall of Fame                 |
 |---------------------------|-----------------------------------------------------------------------------|
 | Acteur                    | Joueur                                                                      |
 | Objectif                  | Réaliser un score parmi les 10 premiers                                     |
-| Préconditions             | Machine Allumée, jeu démarré                                               |
-| Déclencheur               | Avoir un Score parmi les 10 premiers                                       |
-| Scénario nominatif        | - Jeu démarré<br>- Le joueur réalise un haut score grâce au jeu ou plusieurs bonus<br>- Le jeu est terminé (Game Over)<br>- Le score affiché<br>- Animation de félicitation |
-| Postconditions            | - Score parmi les 10 premiers<br>- Animation de félicitation               |
-| Extensions/Exceptions     | - Le joueur finit la partie en 11ème place ou plus<br>- Joueur refuse de mettre son surnom |
-| Classes impliquées        | Game, Physics Engine, Ball, Bar, ScoreManager, Animation                   |
+| Préconditions             | Machine Allumée, jeu démarré                                                |
+| Déclencheur               | Avoir un Score parmi les 10 premiers                                        |
+| Scénario nominatif        | - Jeu démarré                                                               |
+|                           | - Le joueur réalise un haut score grâce au jeu ou plusieurs bonus           |
+|                           | - Le jeu est terminé (Game Over)                                            |
+|                           | - Le score affiché                                                           |
+|                           | - Animation de félicitation                                                 |
+| Postconditions            | - Score parmi les 10 premiers                                               |
+|                           | - Animation de félicitation                                                 |
+| Extensions/Exceptions     | - Le joueur finit la partie en 11ème place ou plus                           |
+|                           | - Joueur refuse de mettre son surnom                                        |
+| Classes impliquées        | Game, Physics Engine, Ball, Bar, ScoreManager, Animation                    |
 
 
 ## 4. Architecture technique
@@ -160,14 +176,20 @@ cd ./annexes/schema_diagramme_d_etat.png
 ## 6. Stack technique
 cd ./annexes/schema_collision_utilisation.png
 
-| Composant         | Techno                                        | Justification                                                                                     |
-|------------------|-----------------------------------------------|--------------------------------------------------------------------------------------------------|
-| Playfield         | React, Three.js, RapierJS ou CannonJS ou p2.js, Blender | React assure une architecture modulaire. Three.js permet le rendu 3D web. Le moteur physique n’est pas encore définitivement choisi, on réfléchit à la solution la plus adaptée au projet. Blender est utilisé pour la création et l'exportation des modèles 3D. |
-| Backglass         | React, Three.js                               | Architecture cohérente avec le Playfield. Permet animations et éléments visuels dynamiques.     |
-| DMD               | React                                          | Adapté à l’affichage 2D temps réel (scores, états, animations). Léger et performant.            |
-| Bridge            | Node.js, WebSocket                             | Permet la communication temps réel entre les modules.                                           |
-| Backend Scores / DB | Node.js, Supabase                             | Supabase simplifie la gestion de la base de données et la persistance. Intégration rapide avec Node.js. |
-| ESP32             | C++                                           | Permet le contrôle du matériel et la gestion des entrées physiques.                             |
+| Composant           | Techno                          | Justification                                                         |
+|---------------------|---------------------------------|----------------------------------------------------------------------|
+| Playfield            | React, Three.js, RapierJS ou    | React assure une architecture modulaire. Three.js permet le rendu 3D |
+|                     | CannonJS ou p2.js, Blender      | web. Le moteur physique n’est pas encore définitivement choisi, on    |
+|                     |                                 | réfléchit à la solution la plus adaptée au projet. Blender est        |
+|                     |                                 | utilisé pour la création et l'exportation des modèles 3D.            |
+| Backglass           | React, Three.js                 | Architecture cohérente avec le Playfield. Permet animations et        |
+|                     |                                 | éléments visuels dynamiques.                                         |
+| DMD                 | React                           | Adapté à l’affichage 2D temps réel (scores, états, animations).       |
+|                     |                                 | Léger et performant.                                                 |
+| Bridge              | Node.js, WebSocket              | Permet la communication temps réel entre les modules.                |
+| Backend Scores / DB | Node.js, Supabase               | Supabase simplifie la gestion de la base de données et la persistance.|
+|                     |                                 | Intégration rapide avec Node.js.                                     |
+| ESP32               | C++                             | Permet le contrôle du matériel et la gestion des entrées physiques.  |
 
 
 ## 7. Risques et Contraintes techniques
@@ -184,10 +206,10 @@ Le projet devra respecter les contraintes suivantes :
 
 ### Risques identifiés
 | Risques              | Probabilité      | Impact      | Mitigation                             |
-|---------------------|-----------------|------------|----------------------------------------|
-| Physique instable    | Moyenne/Forte   | Très fort  | Testers différents moteurs physiques  |
-| Latence du WebSocket | Moyenne         | Fort       | Tests en local                         |
-| Performance 3D      | Moyenne         | Moyen      | Optimisation des collisions            |
+|----------------------|------------------|-------------|----------------------------------------|
+| Physique instable    | Moyenne/Forte    | Très fort   | Testers différents moteurs physiques   |
+| Latence du WebSocket | Moyenne          | Fort        | Tests en local                         |
+| Performance 3D       | Moyenne          | Moyen       | Optimisation des collisions            |
 
 ### Critères de réussite
 
@@ -251,15 +273,25 @@ Les tests sont obligatoires sur le backend.
 - Partie ia : Ollama ou Hugging face
 
 ### Roadmap
-| Semaines | À faire                                                                                                             |
+| Semaines | À faire                                                                                                            |
 |----------|--------------------------------------------------------------------------------------------------------------------|
-| S1       | Cahier des charges, Setup Github, WebSocket simple, Setup ThreeJS / Moteur physique                                 |
-| S2       | Frontend : Bille gravité, Collisions (Bridge, Flipper gauche/droite, Bumpers, Slingshot, Launcher), Backglass (réception événements, affichage scores)<br>Backend : gestion d'états, communication client<br>IOT : communication ESP32 et WebSocket |
-| S3       | Frontend : Squelette fonctionnel, Atouts (60%), GAME OVER<br>Backend : module IA                                    |
-| S4       | Frontend : Fin des assets, terminer Backglass<br>Backend : Gestion multi-joueurs et jeux contre bot                |
-| S5       | IOT : Mapping bouton ESP32, Gestion solénoïdes, Gestion de la latence<br>Frontend : DMD                            |
-| S6       | Frontend : Texture, Animations, Musiques, Sons<br>Backend / IOT : Test, debug<br>Présentation                       |
-| S7       | Frontend : Texture, Animations, Musiques, Sons<br>Backend / IOT : Test, debug<br>Présentation                       |
+| S1       | Cahier des charges, Setup Github, WebSocket simple, Setup ThreeJS / Moteur physique                                |
+| S2       | Frontend : Bille gravité, Collisions (Bridge, Flipper gauche/droite, Bumpers, Slingshot, Launcher), Backglass      |
+|          | (réception événements, affichage scores)                                                                            |
+|          | Backend : gestion d'états, communication client                                                                    |
+|          | IOT : communication ESP32 et WebSocket                                                                             |
+| S3       | Frontend : Squelette fonctionnel, Atouts (60%), GAME OVER                                                          |
+|          | Backend : module IA                                                                                                |
+| S4       | Frontend : Fin des assets, terminer Backglass                                                                      |
+|          | Backend : Gestion multi-joueurs et jeux contre bot                                                                 |
+| S5       | IOT : Mapping bouton ESP32, Gestion solénoïdes, Gestion de la latence                                              |
+|          | Frontend : DMD                                                                                                     |
+| S6       | Frontend : Texture, Animations, Musiques, Sons                                                                     |
+|          | Backend / IOT : Test, debug                                                                                        |
+|          | Présentation                                                                                                       |
+| S7       | Frontend : Texture, Animations, Musiques, Sons                                                                     |
+|          | Backend / IOT : Test, debug                                                                                        |
+|          | Présentation                                                                                                       |
 
 
 Suivi : [http://github.com/users/arthurGuillemin/projects/](http://github.com/users/arthurGuillemin/projects/)
