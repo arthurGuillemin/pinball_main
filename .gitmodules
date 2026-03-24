@@ -1,9 +1,6 @@
 [submodule "pinball_esp32"]
 	path = pinball_esp32
 	url = https://github.com/arthurGuillemin/pinball_esp32
-[submodule "pinball_bridge"]
-	path = pinball_bridge
-	url = https://github.com/arthurGuillemin/pinball_bridge
 [submodule "pinball_backend"]
 	path = pinball_backend
 	url = https://github.com/arthurGuillemin/pinball_backend
